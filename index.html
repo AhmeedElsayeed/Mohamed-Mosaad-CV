@@ -34,6 +34,20 @@
         .skill-bar-fill.animate-fill {
             width: var(--skill-level);
         }
+        .hero-star {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #EEEEEE;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.5); opacity: 0; }
+        }
     </style>
 </head>
 <body class="bg-[#EEEEEE] text-[#0F0E0E]">
@@ -66,7 +80,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="bg-[#0F0E0E] text-white">
+        <section id="hero" class="bg-[#0F0E0E] text-white relative overflow-hidden">
+             <div class="hero-star" style="top: 20%; left: 10%; animation-delay: 0.5s;"></div>
+            <div class="hero-star" style="top: 60%; left: 80%; animation-delay: 1.2s;"></div>
+            <div class="hero-star" style="top: 40%; left: 50%; animation-delay: 2s;"></div>
+            <div class="hero-star" style="top: 80%; left: 30%; animation-delay: 0.8s;"></div>
+            <div class="hero-star" style="top: 15%; left: 70%; animation-delay: 2.5s;"></div>
             <div class="container mx-auto px-6 py-24 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4">محمد مسعد عبد المنعم</h1>
                 <p class="text-xl md:text-3xl font-light opacity-80 mb-6">خبير مونتاج فيديو وصانع محتوى</p>
@@ -177,6 +196,14 @@
 
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">الشنواني</h3>
+                            <p class="text-slate-600 mb-4">فيديوهات إعلانية لعرض المجوهرات.</p>
+                            <a href="https://www.facebook.com/selshanawany/reels/" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
                             <h3 class="font-bold text-xl mb-2">Glitter Spa</h3>
                             <p class="text-slate-600 mb-4">إنشاء محتوى فيديو تسويقي لمركز تجميل.</p>
                             <a href="https://www.facebook.com/GlitterSpa2023/reels" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
@@ -185,9 +212,17 @@
 
                      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="p-6 text-center">
-                            <h3 class="font-bold text-xl mb-2">الشنواني</h3>
-                            <p class="text-slate-600 mb-4">فيديوهات إعلانية لعرض المجوهرات.</p>
-                            <a href="https://www.facebook.com/selshanawany/reels/" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                            <h3 class="font-bold text-xl mb-2">أبو الخير لتجارة الأحذية بالجملة</h3>
+                            <p class="text-slate-600 mb-4">هنا يمكنك الاطلاع على أعمالي الشخصية ومشاريعي الفنية.</p>
+                            <a href="https://www.facebook.com/profile.php?id=100090962177524" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+                    
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">أبو الخير لتجارة الأحذية بالجملة</h3>
+                            <p class="text-slate-600 mb-4">إنتاج ومونتاج فيديوهات للمحتوى الفكاهي والاجتماعي.</p>
+                            <a href="https://www.tiktok.com/@abo_elkher1" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
                         </div>
                     </div>
 
@@ -260,6 +295,18 @@
                     <span class="text-5xl mb-2">📞</span>
                     <a href="tel:+201200260633" class="font-semibold hover:text-[#468A9A] transition duration-300">+20 120 026 0633</a>
                 </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl mb-2">💬</span>
+                    <a href="https://wa.me/201200260633" target="_blank" class="font-semibold hover:text-[#468A9A] transition duration-300">واتساب</a>
+                </div>
+            </div>
+            <div class="flex flex-wrap justify-center items-center space-x-6 space-x-reverse mt-8">
+                 <a href="https://www.facebook.com/profile.php?id=100090962177524" target="_blank" class="text-3xl hover:text-[#468A9A] transition duration-300">
+                    <span class="text-5xl mb-2">📘</span>
+                </a>
+                 <a href="https://www.tiktok.com/@abo_elkher1" target="_blank" class="text-3xl hover:text-[#468A9A] transition duration-300">
+                    <span class="text-5xl mb-2">🎵</span>
+                </a>
             </div>
             
         </div>
@@ -322,7 +369,7 @@
 
         async function pcmToWav(pcmData, sampleRate) {
             const numChannels = 1;
-            const bytesPerSample = 2; // 16-bit PCM
+            const bytesPerSample = 2;
             const blockAlign = numChannels * bytesPerSample;
             const byteRate = sampleRate * blockAlign;
             const dataSize = pcmData.byteLength;
@@ -333,22 +380,19 @@
             
             let offset = 0;
             
-            // RIFF chunk
             view.setUint32(offset, 0x52494646, false); offset += 4;
             view.setUint32(offset, fileSize - 8, true); offset += 4;
             view.setUint32(offset, 0x57415645, false); offset += 4;
             
-            // fmt chunk
             view.setUint32(offset, 0x666d7420, false); offset += 4;
-            view.setUint32(offset, 16, true); offset += 4; // Sub-chunk size
-            view.setUint16(offset, 1, true); offset += 2; // Audio format (1 = PCM)
+            view.setUint32(offset, 16, true); offset += 4;
+            view.setUint16(offset, 1, true); offset += 2;
             view.setUint16(offset, numChannels, true); offset += 2;
             view.setUint32(offset, sampleRate, true); offset += 4;
             view.setUint32(offset, byteRate, true); offset += 4;
             view.setUint16(offset, blockAlign, true); offset += 2;
-            view.setUint16(offset, bytesPerSample * 8, true); offset += 2; // Bits per sample
+            view.setUint16(offset, bytesPerSample * 8, true); offset += 2;
             
-            // data chunk
             view.setUint32(offset, 0x64617461, false); offset += 4;
             view.setUint32(offset, dataSize, true); offset += 4;
             
@@ -485,4 +529,3 @@
     </script>
 </body>
 </html>
-
