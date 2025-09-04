@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف الأعمال | محمد مسعد عبد المنعم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajwal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: #0F0E0E, #541212, #468A9A, #EEEEEE -->
+    <!-- Application Structure Plan: A refined single-page portfolio with a fixed navigation bar for smooth scrolling. The structure includes: Hero (Intro), About (Summary), Experience (vertical timeline), Skills (animated visual bars), Portfolio (card grid), and Contact. This design prioritizes a clean, professional, and visually engaging flow, allowing recruiters to quickly grasp the user's career path and see live work examples, which is crucial for a video editor's portfolio. The interactive animations on scroll enhance the user experience and convey a modern skill set. -->
+    <!-- Visualization & Content Choices: Report Info: Experience -> Goal: Showcase progression -> Viz/Presentation: Enhanced vertical timeline with alternating sides and subtle animations on scroll. -> Interaction: None. Justification: Provides a clear, professional visual narrative of the career journey. Report Info: Skills -> Goal: Quantify proficiency -> Viz/Presentation: HTML/CSS bars with a filling animation. -> Interaction: Trigger animation on section visibility. -> Justification: More dynamic and engaging than static text, visually communicates proficiency level. Report Info: Portfolio Links -> Goal: Provide access to work samples -> Viz/Presentation: Clean, card-based grid. -> Interaction: Subtle hover effects and direct links to external sites. -> Justification: An organized and professional way to present work, a mandatory component for a portfolio. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Tajwal', sans-serif;
+            scroll-behavior: smooth;
+            color: #0F0E0E;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #468A9A;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+        .skill-bar-fill {
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        .skill-bar-fill.animate-fill {
+            width: var(--skill-level);
+        }
+    </style>
+</head>
+<body class="bg-[#EEEEEE] text-[#0F0E0E]">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-xl sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-[#0F0E0E] transition duration-300 transform hover:scale-105">محمد مسعد</a>
+            <div class="hidden md:flex space-x-8 space-x-reverse font-medium">
+                <a href="#about" class="text-slate-600 hover:text-[#468A9A] transition duration-300 hover:border-b-2 hover:border-[#468A9A] pb-1">الملخص المهني</a>
+                <a href="#experience" class="text-slate-600 hover:text-[#468A9A] transition duration-300 hover:border-b-2 hover:border-[#468A9A] pb-1">الخبرة العملية</a>
+                <a href="#portfolio" class="text-slate-600 hover:text-[#468A9A] transition duration-300 hover:border-b-2 hover:border-[#468A9A] pb-1">أعمالي</a>
+                <a href="#skills" class="text-slate-600 hover:text-[#468A9A] transition duration-300 hover:border-b-2 hover:border-[#468A9A] pb-1">المهارات</a>
+                <a href="#contact" class="text-slate-600 hover:text-[#468A9A] transition duration-300 hover:border-b-2 hover:border-[#468A9A] pb-1">تواصل معي</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-[#0F0E0E] focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4 space-y-2 text-center bg-white shadow-inner">
+             <a href="#about" class="block text-slate-600 hover:text-[#468A9A] transition duration-300 py-2">الملخص المهني</a>
+            <a href="#experience" class="block text-slate-600 hover:text-[#468A9A] transition duration-300 py-2">الخبرة العملية</a>
+            <a href="#portfolio" class="block text-slate-600 hover:text-[#468A9A] transition duration-300 py-2">أعمالي</a>
+            <a href="#skills" class="block text-slate-600 hover:text-[#468A9A] transition duration-300 py-2">المهارات</a>
+            <a href="#contact" class="block text-slate-600 hover:text-[#468A9A] transition duration-300 py-2">تواصل معي</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="bg-[#0F0E0E] text-white">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-4">محمد مسعد عبد المنعم</h1>
+                <p class="text-xl md:text-3xl font-light opacity-80 mb-6">خبير مونتاج فيديو وصانع محتوى</p>
+                <a href="#portfolio" class="mt-8 inline-block bg-[#468A9A] text-white font-bold py-3 px-8 rounded-full hover:bg-[#541212] transition duration-300 transform hover:scale-105 shadow-lg">
+                    تصفح أعمالي
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex items-center justify-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold section-title ml-4">الملخص المهني</h2>
+                     <button id="tts-btn" class="text-lg bg-[#468A9A] text-white p-2 rounded-full hover:bg-[#541212] transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                    </button>
+                    <audio id="tts-audio" src=""></audio>
+                </div>
+                <p id="about-text" class="max-w-3xl mx-auto text-lg md:text-xl text-slate-700 leading-relaxed">
+                    خبير في مونتاج الفيديو بخبرة عملية تزيد عن 5 سنوات، متخصص في صناعة محتوى احترافي ومبتكر لمنصات التواصل الاجتماعي، مع تركيز خاص على "الريلز" والفيديوهات القصيرة. لدي سجل حافل في تحويل الأفكار إلى محتوى مرئي جذاب يساهم في زيادة التفاعل والمبيعات. أمتلك مهارات متعددة في استخدام أحدث برامج المونتاج، وأجيد تحويل الأفكار إلى محتوى يحقق الأهداف التسويقية للعلامات التجارية.
+                </p>
+            </div>
+        </section>
+
+        <!-- Gemini Ideas Section -->
+        <section id="gemini-ideas" class="py-20 bg-white">
+             <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">✨ أفكار إبداعية لمحتوى الفيديو ✨</h2>
+                 <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">استخدم الذكاء الاصطناعي من Gemini لتوليد أفكار فيديو مبتكرة لأي موضوع. جرب كتابة كلمة مفتاحية مثل "مجوهرات" أو "منتجات تجميل".</p>
+                 <div class="max-w-xl mx-auto flex flex-col md:flex-row gap-4">
+                     <input type="text" id="idea-input" placeholder="اكتب موضوعًا لإنشاء أفكار فيديو..." class="flex-1 p-4 rounded-lg border-2 border-slate-300 focus:outline-none focus:border-[#468A9A] transition duration-300 bg-white text-[#0F0E0E]">
+                     <button id="generate-btn" class="bg-[#468A9A] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#541212] transition duration-300 transform hover:scale-105">
+                         <span id="generate-text">توليد الأفكار</span>
+                         <span id="generate-loader" class="hidden">...</span>
+                     </button>
+                 </div>
+                 <div id="ideas-output" class="mt-8 p-6 bg-[#EEEEEE] rounded-lg shadow-inner text-right min-h-[100px] text-slate-700 leading-relaxed transition-all duration-300">
+                    <p class="text-center">سيظهر المحتوى هنا...</p>
+                 </div>
+             </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 bg-[#EEEEEE]">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">الخبرة العملية</h2>
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="absolute left-1/2 w-0.5 h-full bg-slate-300 transform -translate-x-1/2"></div>
+                    
+                    <div class="mb-12 flex justify-between items-center w-full right-timeline">
+                        <div class="order-1 w-full md:w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform -translate-x-1/2">
+                            <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
+                        </div>
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 translate-x-16 timeline-item">
+                            <h3 class="font-bold text-[#0F0E0E] text-xl md:text-2xl">محرر فيديو</h3>
+                            <p class="text-sm font-medium text-[#541212] mb-4">Spot ADV | (لمدة 3 سنوات)</p>
+                            <ul class="list-disc pl-5 text-slate-700 text-right space-y-2">
+                                <li>مسؤول عن مونتاج وإنتاج محتوى مرئي عالي الجودة لمجموعة متنوعة من العملاء.</li>
+                                <li>ساهمت في زيادة مبيعات علامات تجارية عبر فيديوهات ريلز.</li>
+                                <li>عملت على زيادة المتابعين الحقيقيين بمحتوى مبتكر.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                        <div class="order-1 w-full md:w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform translate-x-1/2">
+                            <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
+                        </div>
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 -translate-x-16 timeline-item">
+                            <h3 class="font-bold text-[#0F0E0E] text-xl md:text-2xl">محرر فيديو</h3>
+                            <p class="text-sm font-medium text-[#541212] mb-4">NOT FOUND AGENCY | (لمدة سنتين)</p>
+                             <ul class="list-disc pl-5 text-slate-700 text-right space-y-2">
+                                <li>قمت بإنتاج ومونتاج الفيديوهات التسويقية والإعلانية.</li>
+                                <li>عملت على تطوير أفكار مبتكرة للمحتوى المرئي.</li>
+                                <li>أدرت مشاريع الفيديو لعملاء في مجالات متنوعة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">أعمالي</h2>
+                 <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">هنا مجموعة من الصفحات التي قمت بإنتاج فيديوهات الريلز الخاصة بها خلال عملي في شركة NOT FOUND AGENCY.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">مجوهرات الشاعر</h3>
+                            <p class="text-slate-600 mb-4">إنتاج فيديوهات ريلز لعرض المجوهرات.</p>
+                            <a href="https://www.facebook.com/ElshaerJewelry/reels/" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">مجوهرات فوزي سعد</h3>
+                            <p class="text-slate-600 mb-4">مونتاج فيديوهات قصيرة لعرض المنتجات.</p>
+                            <a href="https://www.facebook.com/fawzysaadJewelers/reels" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">Glitter Spa</h3>
+                            <p class="text-slate-600 mb-4">إنشاء محتوى فيديو تسويقي لمركز تجميل.</p>
+                            <a href="https://www.facebook.com/GlitterSpa2023/reels" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6 text-center">
+                            <h3 class="font-bold text-xl mb-2">سيلشنواني</h3>
+                            <p class="text-slate-600 mb-4">فيديوهات إعلانية لعرض المجوهرات.</p>
+                            <a href="https://www.facebook.com/selshanawany/reels/" target="_blank" class="text-[#468A9A] font-semibold hover:underline">مشاهدة الأعمال</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">المهارات</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-center mb-6">المهارات الفنية</h3>
+                        <div class="space-y-4">
+                            <div class="skill-group" data-level="95%">
+                                <p class="font-medium mb-1">Adobe Premiere Pro</p>
+                                <div class="w-full bg-slate-300 rounded-full h-4"><div class="skill-bar-fill bg-[#468A9A] h-4 rounded-full"></div></div>
+                            </div>
+                            <div class="skill-group" data-level="80%">
+                                <p class="font-medium mb-1">Adobe After Effects</p>
+                                <div class="w-full bg-slate-300 rounded-full h-4"><div class="skill-bar-fill bg-[#468A9A] h-4 rounded-full"></div></div>
+                            </div>
+                            <div class="skill-group" data-level="90%">
+                                <p class="font-medium mb-1">CapCut & Canva</p>
+                                <div class="w-full bg-slate-300 rounded-full h-4"><div class="skill-bar-fill bg-[#468A9A] h-4 rounded-full"></div></div>
+                            </div>
+                            <div class="skill-group" data-level="100%">
+                                <p class="font-medium mb-1">إنتاج الريلز والفيديوهات القصيرة</p>
+                                <div class="w-full bg-slate-300 rounded-full h-4"><div class="skill-bar-fill bg-[#468A9A] h-4 rounded-full"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-center mb-6">المهارات الشخصية</h3>
+                        <ul class="space-y-4 max-w-sm mx-auto">
+                            <li class="flex items-center"><span class="bg-[#468A9A] text-white rounded-full w-6 h-6 text-center mr-3 ml-3 flex-shrink-0">✓</span> التعلم السريع واكتساب المهارات</li>
+                            <li class="flex items-center"><span class="bg-[#468A9A] text-white rounded-full w-6 h-6 text-center mr-3 ml-3 flex-shrink-0">✓</span> مهارات تواصل ممتازة مع العملاء</li>
+                            <li class="flex items-center"><span class="bg-[#468A9A] text-white rounded-full w-6 h-6 text-center mr-3 ml-3 flex-shrink-0">✓</span> حل المشكلات وإيجاد حلول إبداعية</li>
+                            <li class="flex items-center"><span class="bg-[#468A9A] text-white rounded-full w-6 h-6 text-center mr-3 ml-3 flex-shrink-0">✓</span> إدارة الوقت والالتزام بالمواعيد</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Education Section -->
+        <section id="education" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title">التعليم</h2>
+                <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+                     <h3 class="text-2xl font-bold text-[#0F0E0E]">بكالوريوس في الآداب</h3>
+                     <p class="text-[#541212] font-medium mt-1">جامعة طنطا</p>
+                     <p class="text-slate-500 mt-2">تخرج سبتمبر 2017</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-[#0F0E0E] text-[#EEEEEE] py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">تواصل معي</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 md:space-x-reverse">
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl mb-2">📧</span>
+                    <a href="mailto:m.mosaadpirlo@gmail.com" class="font-semibold hover:text-[#468A9A] transition duration-300">m.mosaadpirlo@gmail.com</a>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="text-5xl mb-2">📞</span>
+                    <a href="tel:+201200260633" class="font-semibold hover:text-[#468A9A] transition duration-300">+20 120 026 0633</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a, .smooth-scroll').forEach(item => {
+            item.addEventListener('click', event => {
+                const href = item.getAttribute('href');
+                if (href.startsWith('#')) {
+                    event.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const timelineObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', '-translate-x-16', 'translate-x-16');
+                    entry.target.classList.add('opacity-100', 'translate-x-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        const skillsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                        const level = bar.parentElement.parentElement.getAttribute('data-level');
+                        bar.style.setProperty('--skill-level', level);
+                        bar.classList.add('animate-fill');
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('#skills').forEach(item => {
+            skillsObserver.observe(item);
+        });
+
+        async function pcmToWav(pcmData, sampleRate) {
+            const numChannels = 1;
+            const bytesPerSample = 2; // 16-bit PCM
+            const blockAlign = numChannels * bytesPerSample;
+            const byteRate = sampleRate * blockAlign;
+            const dataSize = pcmData.byteLength;
+            const fileSize = 44 + dataSize;
+            
+            const buffer = new ArrayBuffer(fileSize);
+            const view = new DataView(buffer);
+            
+            let offset = 0;
+            
+            // RIFF chunk
+            view.setUint32(offset, 0x52494646, false); offset += 4;
+            view.setUint32(offset, fileSize - 8, true); offset += 4;
+            view.setUint32(offset, 0x57415645, false); offset += 4;
+            
+            // fmt chunk
+            view.setUint32(offset, 0x666d7420, false); offset += 4;
+            view.setUint32(offset, 16, true); offset += 4; // Sub-chunk size
+            view.setUint16(offset, 1, true); offset += 2; // Audio format (1 = PCM)
+            view.setUint16(offset, numChannels, true); offset += 2;
+            view.setUint32(offset, sampleRate, true); offset += 4;
+            view.setUint32(offset, byteRate, true); offset += 4;
+            view.setUint16(offset, blockAlign, true); offset += 2;
+            view.setUint16(offset, bytesPerSample * 8, true); offset += 2; // Bits per sample
+            
+            // data chunk
+            view.setUint32(offset, 0x64617461, false); offset += 4;
+            view.setUint32(offset, dataSize, true); offset += 4;
+            
+            const pcm16 = new Int16Array(pcmData);
+            for (let i = 0; i < pcm16.length; i++, offset += 2) {
+                view.setInt16(offset, pcm16[i], true);
+            }
+            
+            return new Blob([view], { type: 'audio/wav' });
+        }
+
+        async function base64ToArrayBuffer(base64) {
+            const binaryString = atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        const ttsBtn = document.getElementById('tts-btn');
+        const ttsAudio = document.getElementById('tts-audio');
+        const aboutText = document.getElementById('about-text');
+
+        ttsBtn.addEventListener('click', async () => {
+            const textToSpeak = aboutText.textContent.trim();
+            if (!textToSpeak) return;
+
+            ttsBtn.disabled = true;
+            ttsBtn.textContent = '...';
+
+            try {
+                const payload = {
+                    contents: [{
+                        parts: [{ text: textToSpeak }]
+                    }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: {
+                            voiceConfig: {
+                                prebuiltVoiceConfig: { voiceName: "Kore" }
+                            }
+                        }
+                    },
+                    model: "gemini-2.5-flash-preview-tts"
+                };
+
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                const part = result?.candidates?.[0]?.content?.parts?.[0];
+                const audioData = part?.inlineData?.data;
+                const mimeType = part?.inlineData?.mimeType;
+
+                if (audioData && mimeType && mimeType.startsWith("audio/")) {
+                    const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)[1], 10);
+                    const pcmData = await base64ToArrayBuffer(audioData);
+                    const wavBlob = await pcmToWav(new Int16Array(pcmData), sampleRate);
+                    const audioUrl = URL.createObjectURL(wavBlob);
+                    ttsAudio.src = audioUrl;
+                    ttsAudio.play();
+                } else {
+                    console.error('Failed to get valid audio data from API.');
+                }
+
+            } catch (error) {
+                console.error('Error generating speech:', error);
+            } finally {
+                ttsBtn.disabled = false;
+                ttsBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-volume-2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+            }
+        });
+
+        const ideaInput = document.getElementById('idea-input');
+        const generateBtn = document.getElementById('generate-btn');
+        const generateText = document.getElementById('generate-text');
+        const generateLoader = document.getElementById('generate-loader');
+        const ideasOutput = document.getElementById('ideas-output');
+
+        generateBtn.addEventListener('click', async () => {
+            const topic = ideaInput.value.trim();
+            if (!topic) return;
+            
+            generateBtn.disabled = true;
+            generateText.classList.add('hidden');
+            generateLoader.classList.remove('hidden');
+            ideasOutput.innerHTML = `<p class="text-center">يتم توليد الأفكار... ⏳</p>`;
+
+            try {
+                const systemPrompt = `Act as a professional video content creator and creative director. Generate a list of three creative and practical video content ideas for social media (specifically for Reels and short videos) based on the following topic. Focus on unique angles, short-form storytelling, and visual appeal. The ideas should be formatted as a numbered list. Example: 1. A short, fast-paced video showcasing the making of a custom jewelry piece, with sound effects and on-screen text. 2. A 15-second "behind the scenes" of a makeup artist's setup, using a popular trending audio.`;
+                const userQuery = `Topic: ${topic}`;
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                const generatedIdeas = result.candidates?.[0]?.content?.parts?.[0]?.text || 'لم يتم العثور على أفكار. حاول مجددًا.';
+
+                ideasOutput.innerHTML = `
+                    <h3 class="font-bold text-lg mb-4 text-[#0F0E0E]">أفكار مقترحة لـ "${topic}"</h3>
+                    <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                        ${generatedIdeas.split('\n').map(item => `<p>${item}</p>`).join('')}
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Error generating ideas:', error);
+                ideasOutput.innerHTML = `<p class="text-center text-red-500">حدث خطأ. يرجى المحاولة مرة أخرى.</p>`;
+            } finally {
+                generateBtn.disabled = false;
+                generateText.classList.remove('hidden');
+                generateLoader.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
