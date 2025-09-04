@@ -48,6 +48,13 @@
             50% { transform: scale(1.2); opacity: 1; }
             100% { transform: scale(0.5); opacity: 0; }
         }
+        .footer-icon-hover {
+            transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        .footer-icon-hover:hover {
+            transform: scale(1.2);
+            color: #468A9A;
+        }
     </style>
 </head>
 <body class="bg-[#EEEEEE] text-[#0F0E0E]">
@@ -86,7 +93,7 @@
             <div class="hero-star" style="top: 40%; left: 50%; animation-delay: 2s;"></div>
             <div class="hero-star" style="top: 80%; left: 30%; animation-delay: 0.8s;"></div>
             <div class="hero-star" style="top: 15%; left: 70%; animation-delay: 2.5s;"></div>
-            <div class="container mx-auto px-6 py-24 text-center">
+            <div class="container mx-auto px-6 py-20 text-center">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4">محمد مسعد عبد المنعم</h1>
                 <p class="text-xl md:text-3xl font-light opacity-80 mb-6">خبير مونتاج فيديو وصانع محتوى</p>
                 <a href="#portfolio" class="mt-8 inline-block bg-[#468A9A] text-white font-bold py-3 px-8 rounded-full hover:bg-[#541212] transition duration-300 transform hover:scale-105 shadow-lg">
@@ -134,17 +141,17 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 section-title">الخبرة العملية</h2>
                 <div class="relative max-w-4xl mx-auto">
-                    <div class="absolute left-1/2 w-0.5 h-full bg-slate-300 transform -translate-x-1/2"></div>
+                    <div class="absolute left-1/2 w-0.5 h-full bg-slate-300 transform -translate-x-1/2 hidden md:block"></div>
                     
-                    <div class="mb-12 flex justify-between items-center w-full right-timeline">
-                        <div class="order-1 w-full md:w-5/12"></div>
-                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform -translate-x-1/2">
+                    <div class="mb-12 flex flex-col md:flex-row justify-between items-center w-full right-timeline">
+                        <div class="order-1 md:w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform md:-translate-x-1/2">
                             <h1 class="mx-auto font-semibold text-lg text-white">1</h1>
                         </div>
-                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 translate-x-16 timeline-item">
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 md:translate-x-16 timeline-item">
                             <h3 class="font-bold text-[#0F0E0E] text-xl md:text-2xl">محرر فيديو</h3>
                             <p class="text-sm font-medium text-[#541212] mb-4">Spot ADV | (لمدة 3 سنوات)</p>
-                            <ul class="list-disc pl-5 text-slate-700 text-right space-y-2">
+                            <ul class="list-disc pr-5 text-slate-700 text-right space-y-2">
                                 <li>مسؤول عن مونتاج وإنتاج محتوى مرئي عالي الجودة لمجموعة متنوعة من العملاء.</li>
                                 <li>ساهمت في زيادة مبيعات علامات تجارية عبر فيديوهات ريلز.</li>
                                 <li>عملت على زيادة المتابعين الحقيقيين بمحتوى مبتكر.</li>
@@ -152,15 +159,15 @@
                         </div>
                     </div>
 
-                    <div class="mb-12 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                        <div class="order-1 w-full md:w-5/12"></div>
-                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform translate-x-1/2">
+                    <div class="mb-12 flex flex-col md:flex-row-reverse justify-between items-center w-full left-timeline">
+                        <div class="order-1 md:w-5/12"></div>
+                        <div class="z-20 flex items-center order-1 bg-[#468A9A] shadow-xl w-8 h-8 rounded-full transform md:translate-x-1/2">
                             <h1 class="mx-auto text-white font-semibold text-lg">2</h1>
                         </div>
-                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 -translate-x-16 timeline-item">
+                        <div class="order-1 bg-white rounded-lg shadow-xl w-full md:w-5/12 px-6 py-6 transition duration-500 ease-in-out transform opacity-0 md:-translate-x-16 timeline-item">
                             <h3 class="font-bold text-[#0F0E0E] text-xl md:text-2xl">محرر فيديو</h3>
                             <p class="text-sm font-medium text-[#541212] mb-4">NOT FOUND AGENCY | (لمدة سنتين)</p>
-                             <ul class="list-disc pl-5 text-slate-700 text-right space-y-2">
+                             <ul class="list-disc pr-5 text-slate-700 text-right space-y-2">
                                 <li>قمت بإنتاج ومونتاج الفيديوهات التسويقية والإعلانية.</li>
                                 <li>عملت على تطوير أفكار مبتكرة للمحتوى المرئي.</li>
                                 <li>أدرت مشاريع الفيديو لعملاء في مجالات متنوعة.</li>
@@ -176,7 +183,7 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">أعمالي</h2>
                  <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">هنا مجموعة من الصفحات التي قمت بإنتاج فيديوهات الريلز الخاصة بها خلال عملي في شركة NOT FOUND AGENCY.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="p-6 text-center">
@@ -288,27 +295,18 @@
             <h2 class="text-3xl font-bold mb-8">تواصل معي</h2>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12 md:space-x-reverse">
                 <div class="flex flex-col items-center">
-                    <span class="text-5xl mb-2">📧</span>
+                    <span class="text-4xl mb-2 footer-icon-hover">📧</span>
                     <a href="mailto:m.mosaadpirlo@gmail.com" class="font-semibold hover:text-[#468A9A] transition duration-300">m.mosaadpirlo@gmail.com</a>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span class="text-5xl mb-2">📞</span>
+                    <span class="text-4xl mb-2 footer-icon-hover">📞</span>
                     <a href="tel:+201200260633" class="font-semibold hover:text-[#468A9A] transition duration-300">+20 120 026 0633</a>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span class="text-5xl mb-2">💬</span>
+                    <span class="text-4xl mb-2 footer-icon-hover">📲</span>
                     <a href="https://wa.me/201200260633" target="_blank" class="font-semibold hover:text-[#468A9A] transition duration-300">واتساب</a>
                 </div>
             </div>
-            <div class="flex flex-wrap justify-center items-center space-x-6 space-x-reverse mt-8">
-                 <a href="https://www.facebook.com/profile.php?id=100090962177524" target="_blank" class="text-3xl hover:text-[#468A9A] transition duration-300">
-                    <span class="text-5xl mb-2">📘</span>
-                </a>
-                 <a href="https://www.tiktok.com/@abo_elkher1" target="_blank" class="text-3xl hover:text-[#468A9A] transition duration-300">
-                    <span class="text-5xl mb-2">🎵</span>
-                </a>
-            </div>
-            
         </div>
     </footer>
 
@@ -423,7 +421,7 @@
             if (!textToSpeak) return;
 
             ttsBtn.disabled = true;
-            ttsBtn.textContent = '...';
+            ttsBtn.innerHTML = '...';
 
             try {
                 const payload = {
