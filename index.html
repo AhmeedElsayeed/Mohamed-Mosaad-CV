@@ -18,9 +18,9 @@
             background-color: #0F172A;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         .hero-bg {
             background: radial-gradient(circle at top right, #1e293b, #020617);
@@ -49,25 +49,61 @@
         @media (max-width: 640px) {
             .hero-text { font-size: 2.25rem !important; }
         }
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.active {
+            max-height: 400px;
+            padding: 1rem 0;
+        }
     </style>
 </head>
 <body class="text-gray-200">
 
     <!-- شريط الإعلان عن نقل الكفالة -->
-    <div class="bg-red-700 text-white text-center py-2 px-4 text-xs md:text-sm font-black sticky top-0 z-[100] shadow-2xl">
+    <div class="bg-red-700 text-white text-center py-2 px-4 text-[10px] md:text-sm font-black sticky top-0 z-[110] shadow-2xl">
         📢 متاح فوراً: <span class="underline">جاهز لنقل كفالة أول مرة</span> - الأحساء، المملكة العربية السعودية
     </div>
 
-    <!-- التنقل -->
-    <nav class="w-full z-50 glass sticky top-8 md:top-9">
-        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-black text-white tracking-tighter uppercase">
-                محمد <span class="text-[#2DD4BF]">مسعد</span>
+    <!-- التنقل المحسن والمتجاوب -->
+    <nav class="w-full z-[100] glass sticky top-8 md:top-9">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- اللوجو -->
+                <div class="text-lg md:text-2xl font-black text-white tracking-tighter uppercase shrink-0">
+                    محمد <span class="text-[#2DD4BF]">مسعد</span>
+                </div>
+
+                <!-- الروابط للشاشات الكبيرة -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse font-bold text-sm">
+                    <a href="#experience" class="hover:text-[#2DD4BF] transition">المسيرة المهنية</a>
+                    <a href="#portfolio" class="hover:text-[#2DD4BF] transition">معرض الأعمال</a>
+                    <a href="https://wa.me/966561795771" target="_blank" class="bg-[#2DD4BF] text-[#0F172A] px-5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-white transition-all transform hover:scale-105 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <span>تواصل واتساب</span>
+                    </a>
+                </div>
+
+                <!-- زر القائمة للجوال -->
+                <div class="md:hidden flex items-center gap-3">
+                    <a href="https://wa.me/966561795771" target="_blank" class="bg-[#2DD4BF] text-[#0F172A] p-2 rounded-lg shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    </a>
+                    <button onclick="toggleMenu()" class="text-white focus:outline-none bg-white/5 p-2 rounded-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
-            <div class="flex space-x-4 md:space-x-8 space-x-reverse text-[11px] md:text-sm font-black uppercase">
-                <a href="#experience" class="hover:text-[#2DD4BF] transition">الخبرة</a>
-                <a href="#portfolio" class="hover:text-[#2DD4BF] transition">الأعمال</a>
-                <a href="#contact" class="hover:text-[#2DD4BF] transition text-teal-400">تواصل</a>
+
+            <!-- القائمة المنسدلة للجوال -->
+            <div id="mobile-menu" class="md:hidden">
+                <div class="flex flex-col space-y-4 pb-4 font-bold">
+                    <a href="#experience" onclick="toggleMenu()" class="py-2 hover:text-[#2DD4BF] border-b border-white/5">المسيرة المهنية</a>
+                    <a href="#portfolio" onclick="toggleMenu()" class="py-2 hover:text-[#2DD4BF] border-b border-white/5">معرض الأعمال</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -83,19 +119,20 @@
                 
                 <h1 class="text-4xl md:text-7xl font-black text-white leading-tight mb-6 hero-text">
                     محمد مسعد <br>
-                    <span class="text-gradient">Mohamed Mosaad</span>
+                    <span class="text-gradient uppercase">Mohamed Mosaad</span>
                 </h1>
                 <p class="text-lg md:text-2xl text-teal-400 font-bold mb-4 italic">خبير تصميم بصري وإخراج فيديو</p>
-                <p class="text-sm md:text-lg text-gray-400 max-w-xl mb-10 leading-relaxed">
-                    متخصص في <span class="text-white font-bold">تصميم الهوية البصرية</span> وصناعة المحتوى الإعلاني. أجمع بين الاحترافية في <span class="text-white font-bold">مونتاج الفيديو</span> والابتكار في <span class="text-white font-bold">تصميم البوسترات</span> لتعزيز حضور العلامات التجارية.
+                <p class="text-sm md:text-lg text-gray-400 max-w-xl mb-10 leading-relaxed text-justify md:text-right">
+                    متخصص في <span class="text-white font-bold border-b border-teal-500">تصميم الهوية البصرية</span> وصناعة المحتوى الإعلاني. أجمع بين الاحترافية في <span class="text-white font-bold border-b border-teal-500">مونتاج الفيديو</span> والابتكار في <span class="text-white font-bold border-b border-teal-500">تصميم البوسترات</span> لتعزيز حضور العلامات التجارية في السوق السعودي.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#portfolio" class="bg-[#2DD4BF] text-[#0F172A] px-10 py-4 rounded-xl font-black text-center hover:bg-white transition duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(45,212,191,0.3)]">
                         استعرض سابقة أعمالي
                     </a>
-                    <a href="https://wa.me/966561795771" target="_blank" class="glass border border-gray-700 px-10 py-4 rounded-xl font-bold text-center hover:bg-gray-800 transition duration-300">
-                        تواصل واتساب
+                    <a href="https://wa.me/966561795771" target="_blank" class="glass border border-gray-700 px-10 py-4 rounded-xl font-bold text-center hover:bg-gray-800 transition duration-300 flex items-center justify-center gap-2">
+                         <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        تواصل مباشر
                     </a>
                 </div>
             </div>
@@ -114,7 +151,7 @@
                             </div>
                             <div class="bg-white/5 p-3 rounded-2xl border border-white/5 flex justify-between items-center px-6">
                                 <span class="text-xs text-gray-400 font-bold tracking-widest uppercase">الحالة</span>
-                                <span class="text-red-500 font-black text-[10px] md:text-xs">جاهز لنقل كفالة أول مرة</span>
+                                <span class="text-red-500 font-black text-[10px] md:text-xs italic uppercase">Ready to transfer</span>
                             </div>
                         </div>
                     </div>
@@ -125,9 +162,9 @@
 
     <!-- المسيرة المهنية -->
     <section id="experience" class="py-24 bg-[#0F172A]">
-        <div class="container mx-auto px-6">
+        <div class="container mx-auto px-6 text-right">
             <h2 class="text-3xl md:text-5xl font-black text-center text-white mb-20 uppercase tracking-tighter italic">المسيرة المهنية</h2>
-            <div class="max-w-5xl mx-auto space-y-12 text-right">
+            <div class="max-w-5xl mx-auto space-y-12">
                 
                 <!-- شركة السعد -->
                 <div class="flex flex-col md:flex-row gap-8 items-start relative group">
@@ -142,10 +179,10 @@
                             أتولى الإدارة الكاملة للهوية البصرية والظهور الرقمي للشركة، حيث تشمل مسؤولياتي:
                         </p>
                         <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-400 text-sm">
-                            <li class="flex items-start"><span class="text-teal-500 ml-2">●</span> تصميم بوسترات تسويقية وبوستات احترافية لإنستغرام.</li>
-                            <li class="flex items-start"><span class="text-teal-500 ml-2">●</span> تصوير وإنتاج ومونتاج الفيديوهات الدعائية لـ TikTok و Instagram.</li>
-                            <li class="flex items-start"><span class="text-teal-500 ml-2">●</span> إدارة وتخطيط المحتوى اليومي والتفاعل مع الجمهور.</li>
-                            <li class="flex items-start"><span class="text-teal-500 ml-2">●</span> تطوير وتوحيد الهوية البصرية للعلامة التجارية في السوق السعودي.</li>
+                            <li class="flex items-start"><span class="text-teal-500 ml-2 font-bold">●</span> تصميم بوسترات تسويقية وبوستات احترافية لإنستغرام.</li>
+                            <li class="flex items-start"><span class="text-teal-500 ml-2 font-bold">●</span> تصوير وإنتاج ومونتاج الفيديوهات الدعائية لـ TikTok و Instagram.</li>
+                            <li class="flex items-start"><span class="text-teal-500 ml-2 font-bold">●</span> إدارة وتخطيط المحتوى اليومي والتفاعل مع الجمهور.</li>
+                            <li class="flex items-start"><span class="text-teal-500 ml-2 font-bold">●</span> تطوير وتوحيد الهوية البصرية للعلامة التجارية في السوق السعودي.</li>
                         </ul>
                     </div>
                 </div>
@@ -170,23 +207,23 @@
     <!-- معرض الأعمال -->
     <section id="portfolio" class="py-24 bg-[#020617]">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20 text-right">
+            <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">معرض الأعمال</h2>
-                <p class="text-gray-400 max-w-2xl">أعمال تمزج بين التصميم الجرافيكي الحديث وتقنيات المونتاج المتقدمة</p>
+                <p class="text-gray-400 max-w-2xl mx-auto">أعمال تمزج بين التصميم الجرافيكي الحديث وتقنيات المونتاج المتقدمة لتعزيز الهوية الرقمية</p>
             </div>
 
             <!-- التصميم والبوسترات -->
-            <h3 class="text-2xl font-black text-teal-400 mb-8 flex items-center">
-                <span class="w-10 h-0.5 bg-teal-400 ml-4"></span> التصميم الجرافيكي والبوسترات الإعلانية
+            <h3 class="text-2xl font-black text-teal-400 mb-8 flex items-center justify-center md:justify-start">
+                 التصميم الجرافيكي والبوسترات الإعلانية <span class="w-10 h-0.5 bg-teal-400 mr-4 hidden md:block"></span>
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 text-right">
                 <!-- إنستغرام السعد -->
                 <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
                     <div class="w-12 h-12 bg-gradient-to-tr from-yellow-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
                         <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.805.249 2.227.412.56.216.96.474 1.38.894.42.42.678.82.894 1.38.163.422.358 1.057.412 2.227.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.249 1.805-.412 2.227-.216.56-.474.96-.894 1.38-.42.42-.82.678-1.38.894-.422.163-1.057.358-2.227.412-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.805-.249-2.227-.412-.56-.216-.96-.474-1.38-.894-.42-.42-.678-.82-.894-1.38-.163-.422-.358-1.057-.412-2.227-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.054-1.17.249-1.805.412-2.227.216-.56.474-.96.894-1.38.42-.42.82-.678 1.38-.894.422-.163 1.057-.358 2.227-.412 1.266-.058 1.646-.07 4.85-.07z"/></svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">هوية شركة السعد (Instagram)</h4>
-                    <p class="text-gray-400 text-xs mb-6">تصميم قوالب البوستات وتنسيق البروفايل بما يتناسب مع السوق السعودي.</p>
+                    <p class="text-gray-400 text-xs mb-6 leading-relaxed">تصميم قوالب البوستات وتنسيق البروفايل بما يتناسب مع السوق السعودي لرفع جودة التفاعل.</p>
                     <a href="https://www.instagram.com/alsaadtradingsa" target="_blank" class="text-amber-500 font-bold hover:underline">مشاهدة التصاميم ←</a>
                 </div>
 
@@ -194,51 +231,37 @@
                 <div class="glass p-8 rounded-3xl border border-gray-800 card-hover flex flex-col justify-center text-center">
                     <span class="text-5xl mb-4">🖼️</span>
                     <h4 class="text-xl font-bold text-white mb-2">تصميم البوسترات والبراندنج</h4>
-                    <p class="text-gray-500 text-xs">إخراج فني للهويات التجارية، تصميم المطبوعات، ولوحات المحلات.</p>
+                    <p class="text-gray-500 text-xs leading-relaxed px-4">إخراج فني للهويات التجارية، تصميم المطبوعات الإعلانية، وتطوير لوحات المحلات التجارية.</p>
                 </div>
             </div>
 
             <!-- المونتاج والريلز -->
-            <h3 class="text-2xl font-black text-teal-400 mb-8 flex items-center">
-                <span class="w-10 h-0.5 bg-teal-400 ml-4"></span> تحرير الفيديو والمونتاج الاحترافي
+            <h3 class="text-2xl font-black text-teal-400 mb-8 flex items-center justify-center md:justify-start">
+                 تحرير الفيديو والمونتاج الاحترافي <span class="w-10 h-0.5 bg-teal-400 mr-4 hidden md:block"></span>
             </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-right">
                 <!-- تيك توك السعد -->
                 <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
                     <div class="bg-black w-10 h-10 rounded-lg flex items-center justify-center mb-6">
                          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.06 3.42-.11 6.83-.18 10.25-.13 2.06-1.11 4.12-2.92 5.16-1.63 1.05-3.83 1.25-5.58.55-1.92-.76-3.41-2.61-3.66-4.66-.33-2.31.78-4.78 2.87-5.9 1.05-.6 2.25-.85 3.47-.8v4.06c-.8-.11-1.68.08-2.33.6-.93.66-1.12 2.05-.53 2.96.48.82 1.5 1.25 2.42 1.04.81-.15 1.38-.87 1.48-1.66.12-2.12.06-4.24.09-6.36V.02z"/></svg>
                     </div>
                     <h4 class="text-xl font-bold text-white mb-2">شركة السعد (TikTok)</h4>
-                    <p class="text-gray-400 text-xs mb-6">تصوير ومونتاج فيديوهات للمنتجات المنزلية مع مؤثرات صوتية وبصرية جذابة.</p>
+                    <p class="text-gray-400 text-xs mb-6 leading-relaxed">تصوير ومونتاج فيديوهات للمنتجات المنزلية بأسلوب سريع وجذاب يخاطب جمهور تيك توك.</p>
                     <a href="https://www.tiktok.com/@alsaadtradingsa" target="_blank" class="text-teal-400 font-bold hover:underline">مشاهدة الفيديوهات ←</a>
                 </div>
 
                 <!-- الشاعر -->
                 <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
                     <h4 class="text-xl font-bold text-white mb-2">مجوهرات الشاعر</h4>
-                    <p class="text-gray-400 text-xs mb-6">مونتاج سينمائي لعرض القطع الذهبية الفاخرة، مع التركيز على بريق المجوهرات.</p>
+                    <p class="text-gray-400 text-xs mb-6">مونتاج سينمائي لعرض القطع الذهبية الفاخرة، مع التركيز على بريق المجوهرات وتفاصيلها الدقيقة.</p>
                     <a href="https://www.facebook.com/ElshaerJewelry/reels/" target="_blank" class="text-gray-300 font-bold hover:text-teal-400 transition">مشاهدة الريلز ←</a>
                 </div>
 
                 <!-- فوزي سعد -->
                 <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
                     <h4 class="text-xl font-bold text-white mb-2">مجوهرات فوزي سعد</h4>
-                    <p class="text-gray-400 text-xs mb-6">إنتاج محتوى ترويجي للمجموعات الجديدة، مونتاج مخصص لمنصة فيسبوك.</p>
+                    <p class="text-gray-400 text-xs mb-6">إنتاج محتوى ترويجي للمجموعات الجديدة، مع مونتاج متقن مخصص لمنصة فيسبوك.</p>
                     <a href="https://www.facebook.com/fawzysaadJewelers/reels" target="_blank" class="text-gray-300 font-bold hover:text-teal-400 transition">مشاهدة الريلز ←</a>
-                </div>
-
-                <!-- جليتر سبا -->
-                <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
-                    <h4 class="text-xl font-bold text-white mb-2">Glitter Spa</h4>
-                    <p class="text-gray-400 text-xs mb-6">فيديوهات إعلانية لمراكز التجميل، مونتاج عصري يبرز جودة الخدمة.</p>
-                    <a href="https://www.facebook.com/GlitterSpa2023/reels" target="_blank" class="text-gray-300 font-bold hover:text-teal-400 transition">مشاهدة الريلز ←</a>
-                </div>
-
-                <!-- أبو الخير -->
-                <div class="glass p-8 rounded-3xl border border-gray-800 card-hover">
-                    <h4 class="text-xl font-bold text-white mb-2">أبو الخير (تيك توك)</h4>
-                    <p class="text-gray-400 text-xs mb-6">إنتاج محتوى ترفيهي واجتماعي حقق انتشاراً واسعاً وملايين المشاهدات.</p>
-                    <a href="https://www.tiktok.com/@abo_elkher1" target="_blank" class="text-gray-300 font-bold hover:text-teal-400 transition">مشاهدة TikTok ←</a>
                 </div>
             </div>
         </div>
@@ -288,5 +311,11 @@
         </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
